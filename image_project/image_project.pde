@@ -1,5 +1,5 @@
 //Global Variables
-int appWidth, appHeight;
+int appWidth, appHeight, fontSize;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float topX, topY, topWidth, topHeight;
 float topX4, topY4, topWidth4, topHeight4;
@@ -7,6 +7,13 @@ float bottomX, bottomY, bottomWidth, bottomHeight;
 float bottomX5, bottomY5, bottomWidth5, bottomHeight5;
 float picWidthAdjusted2=0.0, picHeightAdjusted2=0.0;
 float picWidthAdjusted4=0.0, picHeightAdjusted4=0.0;
+float P2X, P2Y, P2Width, P2Height;
+float P4X, P4Y, P4Width, P4Height;
+float P3X, P3Y, P3Width, P3Height;
+float P5X, P5Y, P5Width, P5Height;
+String P2 = "Algorythm 2", P4 = "Algorythm 4", P3 = "No Algorythm", P5 = "No Algorythm";
+PFont titleFont;
+color green=#05FF0F;
 PImage pic1, pic2, pic3, pic4, pic5;
 Boolean nightMode=false, tintR=false, tintG=false,tintB=false,tintReset=false;
 int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
@@ -49,21 +56,32 @@ void setup()
   bottomY = appHeight * 2.8/4;
   bottomWidth = appWidth * 7/20;
   bottomHeight = appHeight * 5/20;
+  P2X = appWidth * 0.4/4;
+  P2Y = appHeight * 0.2/4;
+  P2Width = appWidth * 5/20;
+  P2Height = appHeight * 1/20;
+  P4X = appWidth * 2.78/4;
+  P4Y = appHeight * 0.2/4;
+  P4Width = appWidth * 3/20;
+  P4Height = appHeight * 1/20;
+  P3X = appWidth * 2.5/4;
+  P3Y = appHeight * 2.8/4;
+  P3Width = appWidth * 7/20;
+  P3Height = appHeight * 5/20;
+  P5X = appWidth * 0.4/4;
+  P5Y = appHeight * 1.9/4;
+  P5Width = appWidth * 5/20;
+  P5Height = appHeight * 10/20;
   //
   //Image Dimensions for Aspect Ratio: image meta data
   //Note: meta explored in MP3's or music files
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
-  int picWidth1 = 800;//Giraffe image
-  int picHeight1 = 600;
   int picWidth2 = 1700;//Car image
   int picHeight2 = 920;
-  int picWidth3 = 735;//Tall man image
-  int picHeight3 = 900;
   int picWidth4 = 226;//Grandma
   int picHeight4 = 300;
   //
   //Image Orientation: Landscape, Square, Portrait
-  float smallerDimension1, largerDimension1, imageWidthRatio1=0.0, imageHeightRatio1=0.0;
   float smallerDimension2, largerDimension2, imageWidthRatio2=0.0, imageHeightRatio2=0.0;
   float smallerDimension4, largerDimension4, imageWidthRatio4=0.0, imageHeightRatio4=0.0;
   //
@@ -124,14 +142,20 @@ void setup()
   //Rectangular Layout and Image Drawing to CANVAS
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   rect( topX, topY, topWidth, topHeight );
+  rect( P2X, P2Y, P2Width, P2Height );
   rect( topX4, topY4, topWidth4, topHeight4 );
+  rect( P4X, P4Y, P4Width, P4Height );
   rect( bottomX, bottomY, bottomWidth, bottomHeight );
+  rect( P3X, P3Y, P3Width, P3Height );
   rect( bottomX5, bottomY5, bottomWidth5, bottomHeight5 );
+  rect( P5X, P5Y, P5Width, P5Height );
   //
   //Background Image must be single executed code
   if ( nightMode == false ) tint(tintDayMode, tintDayModeOpacity); //Gray Scale, Day use: use 1/2 tint value for white (i.e. 128/256=1/2)
   if ( nightMode == true ) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity); //RGB: Night Mode
   image( pic1, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  //
+  titleFont = createFont("Sitka Text", 20);
 }//End setup
 //
 void draw()
@@ -140,6 +164,28 @@ void draw()
   image( pic3, bottomX, bottomY, bottomWidth, bottomHeight );
   image( pic4, topX4, topY4, picWidthAdjusted4, picHeightAdjusted4);
   image( pic5, bottomX5, bottomY5, bottomWidth5, bottomHeight5 );
+  //
+  fontSize = 30;
+  textFont(titleFont);
+  text( P2, P2X, P2Y, P2Width, P2Height );
+  textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  fill(green);
+  textFont(titleFont);
+  text( P4, P4X, P4Y, P4Width, P4Height );
+  textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  fill(green);
+  textFont(titleFont);
+  text( P3, P3X, P3Y, P3Width, P3Height );
+  textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  fill(green);
+  textFont(titleFont);
+  text( P5, P5X, P5Y, P5Width, P5Height );
+  textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  fill(green);
   //
   if ( tintR == true ) tint(255,100,0); //Gray Scale (0-255) & Blue Issue for night mode
   if ( tintG == true ) tint(0,255,0); //Gray Scale (0-255) & Blue Issue for night mode
@@ -169,7 +215,7 @@ void keyPressed() {
   tintReset=false;
   if ( key == 'E' || key == 'e' ) tintReset = true;
     rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-    tint(0, 0, 0); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
+    tint(255, 50); //Gray Scale: use 1/2 tint value for white (i.e. 128/256=1/2)
     image(pic1, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
 }//End keyPressed
 //
