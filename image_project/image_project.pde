@@ -11,9 +11,9 @@ float P2X, P2Y, P2Width, P2Height;
 float P4X, P4Y, P4Width, P4Height;
 float P3X, P3Y, P3Width, P3Height;
 float P5X, P5Y, P5Width, P5Height;
-String P2 = "Algorythm 2", P4 = "Algorythm 4", P3 = "No Algorythm", P5 = "No Algorythm";
+String P2 = "Aspect Ratio", P4 = "Aspect Ratio", P3 = "No Aspect Ratio", P5 = "No Aspect Ratio";
 PFont titleFont;
-color green=#05FF0F;
+color red=#FF0004;
 PImage pic1, pic2, pic3, pic4, pic5;
 Boolean nightMode=false, tintR=false, tintG=false,tintB=false,tintReset=false;
 int tintDayMode=255, tintDayModeOpacity=50, tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
@@ -170,22 +170,22 @@ void draw()
   text( P2, P2X, P2Y, P2Width, P2Height );
   textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  fill(green);
+  fill(red);
   textFont(titleFont);
   text( P4, P4X, P4Y, P4Width, P4Height );
   textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  fill(green);
+  fill(red);
   textFont(titleFont);
   text( P3, P3X, P3Y, P3Width, P3Height );
   textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  fill(green);
+  fill(red);
   textFont(titleFont);
   text( P5, P5X, P5Y, P5Width, P5Height );
   textAlign(CENTER, BASELINE); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  fill(green);
+  fill(red);
   //
   if ( tintR == true ) tint(255,100,0); //Gray Scale (0-255) & Blue Issue for night mode
   if ( tintG == true ) tint(0,255,0); //Gray Scale (0-255) & Blue Issue for night mode
