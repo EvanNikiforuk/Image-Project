@@ -35,39 +35,47 @@ void setup()
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
+  //
   bottomX5 = appWidth * 0.4/4;
   bottomY5 = appHeight * 1.9/4;
   bottomWidth5 = appWidth * 5/20;
   bottomHeight5 = appHeight * 10/20;
+  //
   topX = appWidth * 0.15/4;
   topY = appHeight * 0.3/4;
   topWidth = appWidth * 8/20;
   topHeight = appHeight * 11/20;
+  //
   topX4 = appWidth * 2.8/4;
   topY4 = appHeight * 0.2/4;
   topWidth4 = appWidth * 5.5/20;
   topHeight4 = appHeight * 5/20;
-  bottomX = appWidth * 1/2;
+  //
   topX = appWidth * 0.4/4;
   topY = appHeight * 0.2/4;
   topWidth = appWidth * 5/20;
   topHeight = appHeight * 12/20;
+  //
   bottomX = appWidth * 2.5/4;
   bottomY = appHeight * 2.8/4;
   bottomWidth = appWidth * 7/20;
   bottomHeight = appHeight * 5/20;
+  //
   P2X = appWidth * 0.4/4;
   P2Y = appHeight * 0.2/4;
   P2Width = appWidth * 5/20;
   P2Height = appHeight * 1/20;
+  //
   P4X = appWidth * 2.78/4;
   P4Y = appHeight * 0.2/4;
   P4Width = appWidth * 3/20;
   P4Height = appHeight * 1/20;
+  //
   P3X = appWidth * 2.5/4;
   P3Y = appHeight * 2.8/4;
   P3Width = appWidth * 7/20;
   P3Height = appHeight * 5/20;
+  //
   P5X = appWidth * 0.4/4;
   P5Y = appHeight * 1.9/4;
   P5Width = appWidth * 5/20;
