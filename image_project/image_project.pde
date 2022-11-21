@@ -193,7 +193,7 @@ void draw()
   if ( tintReset == true ) tint(255,50); //Gray Scale (0-255) & Blue Issue for night mode
 }//End draw
 //
-void keyPressed() { //For you have to click a random letter if you want to use night mode again after switching the tint color
+void keyPressed() { //You have to click a random letter if you want to use night mode again after switching the tint color
   tintR=false;
   if ( key == 'R' || key == 'r' ) tintR = true;
     rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
